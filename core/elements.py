@@ -1,4 +1,4 @@
-from core.exceptions import EmptyCode
+from core.exceptions import EmptyCode, InconsistentElement
 
 class Element:
 
@@ -36,7 +36,8 @@ class Element:
 
         attr = getattr(self, element)
 
-        # TODO: Check if the heda element of "Element"
+        if not issubclass(attr, Element):
+            raise InconsistentElement(f'{attr} it is not an Element')
 
         return True
 
