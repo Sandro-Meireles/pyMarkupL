@@ -2,13 +2,14 @@
 Streamline the production of your HTML page using this python framework
 
 ## Installation
- - download this repository `git clone https://github.com/Sandro-Meireles/pyMarkupL.git`
+ - Download/Clone this repository `git clone https://github.com/Sandro-Meireles/pyMarkupL.git`
  
- this framework will be added future in PyPi
+ This framework will be added future in PyPi
  
-## Getting Start
+## Understanding the Structure
 
-this is the structure of the files in the repository.
+This is the structure of the files in the repository.
+
 
 ```
 │   .gitignore
@@ -33,13 +34,42 @@ this is the structure of the files in the repository.
             └── style.py   
 ```
 
-In these files we already have a project ready as an example,
-to test it use the command 
+The way the entire project is structured is at the discretion of the developer, I used this pattern as an example only.
+
+- `settings.py` Where we configure some aspects of our project.
+
+```py
+from src.main import Main
+
+MAIN_ELEMENT = Main
+```
+`MAIN_ELEMENT` Is a constant, where we tell our project which is the main element,which in this example is `Main`.
+
+These constants can be changed at any time, again, as stated before:
+the way the entire project is structured is at the discretion of the developer.
+
+- `src/` All components of that project are found here.
+
+```
+└── src
+    │   main.py
+    │
+    └── components
+        │   box.py
+        │   toolbar.py
+        │
+        └──static
+            └── style.py 
+```
+
+## Run
+
+To test this application use the command:
 - `python manage.py compile`
 
 ---
 
-this documentation is still in production, so give this repository a star, as soon as possible we will finalize
+This documentation is still in production, so give this repository a star, as soon as possible we will finalize
 
 ## Goal
 
