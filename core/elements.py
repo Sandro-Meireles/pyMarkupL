@@ -4,10 +4,9 @@ class Element:
 
     def __init__(self, code: str = '', *args, **kwargs):
         self._code = code
-        self.assign_code()
+        self.assign_code(self.render(*args, **kwargs))
 
-    def assign_code(self):
-        render = self.render()
+    def assign_code(self, render: str):
         if not render:
             raise EmptyCode(f'{self.__class__.__name__} has no code!')
 
@@ -37,27 +36,65 @@ class Element:
 
         attr = getattr(self, element)
 
-        if not isinstance(attr, Element):
-            return False
+        # TODO: Check if the heda element of "Element"
 
         return True
 
-    def clean_element(self, element: str) -> str:
+    def is_arg_valid(self, arg) -> bool:
+        # TODO: Add more validations
+
+        splited_arg = arg.split('=')
+        if len(splited_arg) == 1:
+            return False
+
+        if not splited_arg[1] :
+            return False
+        
+        return True
+
+    def treat_kwargs(self, args: str):
+        args = args.replace('(', '').replace(')', '')
+        kwargs = {}
+        for arg in args.split(','):
+            arg = arg.strip()
+
+            if not self.is_arg_valid(arg):
+                raise SyntaxError(f'Invalid arg <{arg}> by {self.__class__}')
+
+            key = arg.split('=')[0]
+            value = arg.split('=')[1].replace('"', '')
+
+            kwargs[key] = value
+        
+        return kwargs
+
+    def clean_element(self, element: str) -> (str, dict):
         if not element.startswith('<') and not element.endswith('>'):
             raise Exception('Elemento errado')
 
-        return element[1:-1].strip()
+        element = element[1:-1].strip()
+
+        if '(' in element and ')' in element:
+            open_args, close_args = element.index('('), element.index(')') + 1
+
+            kwargs = self.treat_kwargs(element[open_args:close_args])
+
+            return element[:open_args], kwargs
+
+        return element, None
+
 
     def replace_element(self, element: str):
-        clean_element = self.clean_element(element)
-
+        clean_element, args = self.clean_element(element)
+  
         if clean_element.startswith('/'):
             return
 
         if self.element_found(clean_element):
             attr = getattr(self, clean_element)
-            self._code = self._code.replace(element, attr.content())
-
+            
+            child_element = attr(**args) if args else attr()
+            self._code = self._code.replace(element, child_element.content())
 
     def content(self) -> str:
         return self._code
