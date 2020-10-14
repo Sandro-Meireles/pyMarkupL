@@ -59,13 +59,42 @@ the way the entire project is structured is at the discretion of the developer.
         │   toolbar.py
         │
         └──static
-            └── style.py 
+            └── style.py
+```
+
+- `src/main.py` The main element, the one that was called in `settings.py`
+
+```py
+from core.elements import Element
+from .components.static.style import MyStyle
+from .components.toolbar import Toolbar
+from .components.box import Box
+
+class Main(Element):
+    
+    myStyle = MyStyle
+    toolbar = Toolbar
+    box = Box
+
+    def render(self, **kwargs):
+        return '''
+            <myStyle>
+            <toolbar(title="pyMarkupL")>
+            <div class="container">
+                <box(title="Title 1")>
+                <box(title="Title 2")>
+                <box(title="Title 3")>
+            </div>
+        '''
 ```
 
 ## Run
 
 To test this application use the command:
-- `python manage.py compile`
+- `python manage.py run`
+
+This will generate a file in `output/debug` named `debug.html` as configured in `settings.py`.  
+To modify the path of this file change the constant `UTPUT_DEBUG` in `settings.py`
 
 ---
 
