@@ -1,4 +1,4 @@
-<img src="https://github.com/Sandro-Meireles/pyMarkupL/blob/master/imgs/pML%20Banner.png" width="550" align="right">
+<img src="https://drive.google.com/file/d/1od-smHe9Oi8dVYIGBhr3aosuhcZIf5Cx/view" width="550" align="right">
 
 # pyMarkupL
 (Python Markup language) Streamline the production of your HTML page using this python framework.
@@ -32,6 +32,7 @@ This is the structure of the files in the repository.
 │   settings.py
 │
 ├── core
+│   │   ...
 │   │   elements.py
 │   └── exceptions.py
 │  
@@ -41,6 +42,7 @@ This is the structure of the files in the repository.
     └── components
         │   box.py
         │   toolbar.py
+        │   text.py
         │
         └──static
             └── style.py   
@@ -69,33 +71,30 @@ the way the entire project is structured is at the discretion of the developer.
     └── components
         │   box.py
         │   toolbar.py
+        │   text.py
         │
         └──static
-            └── style.py
+            └── style.py 
 ```
 
 - `src/main.py` Contains the main element, the one that was called in `settings.py`
 
 ```py
 from core.elements import Element
-from .components.static.style import MyStyle
-from .components.toolbar import Toolbar
-from .components.box import Box
+from src.components.static.style import MyStyle
+from src.components.toolbar import Toolbar
+from src.components.box import Box
 
 class Main(Element):
-    
-    myStyle = MyStyle
-    toolbar = Toolbar
-    box = Box
 
     def render(self, **kwargs):
         return '''
-            <myStyle>
-            <toolbar(title="pyMarkupL")>
+            <MyStyle>
+            <Toolbar(title="pyMarkupL")>
             <div class="container">
-                <box(title="Title 1")>
-                <box(title="Title 2")>
-                <box(title="Title 3")>
+                <Box(title="Title 1")>
+                <Box(title="Title 2")>
+                <Box(title="Title 3")>
             </div>
         '''
 ```
@@ -130,10 +129,10 @@ This method must return a `str` and, within that string, can contain HTML elemen
 ```
 and pML elements:
 ```html
-<toolbar(title="pyMarkupL")>
+<Toolbar(title="pyMarkupL")>
 ```
 There is no limit on the number of elements being returned, be careful only with the syntax, because depending on the error nothing will be raised.  
-Don't worry if you can't understand what `<toolbar(title="pyMarkupL")>` does, or how it works, right after this topic we'll explain everything right.
+Don't worry if you can't understand what `<Toolbar(title="pyMarkupL")>` does, or how it works, right after this topic we'll explain everything right.
 
 ## Run
 

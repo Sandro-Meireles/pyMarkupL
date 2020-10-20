@@ -1,4 +1,5 @@
 from core.exceptions import EmptyCode, InconsistentElement
+from core.mamber_manager import MemberManager
 
 class Element:
 
@@ -29,17 +30,6 @@ class Element:
                 self.replace_element(str_element)
 
                 mairq_index = None
-
-    def element_found(self, element: str) -> bool:
-        if not hasattr(self, element):
-            return False
-
-        attr = getattr(self, element)
-
-        if not issubclass(attr, Element):
-            raise InconsistentElement(f'{attr} it is not an Element')
-
-        return True
 
     def is_arg_valid(self, arg) -> bool:
         # TODO: Add more validations
@@ -84,17 +74,17 @@ class Element:
 
         return element, None
 
-
     def replace_element(self, element: str):
         clean_element, args = self.clean_element(element)
-  
+
         if clean_element.startswith('/'):
             return
+  
+        element_class = MemberManager.get_member(self, clean_element)
 
-        if self.element_found(clean_element):
-            attr = getattr(self, clean_element)
+        if element_class:
             
-            child_element = attr(**args) if args else attr()
+            child_element = element_class(**args) if args else element_class()
             self._code = self._code.replace(element, child_element.content())
 
     def content(self) -> str:

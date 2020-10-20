@@ -1,12 +1,12 @@
 from core.elements import Element
+from src.components.text import Text
 
 class Toolbar(Element):
 
-    def render(self, **kwargs):
-        title = kwargs.get("title")
+    def render(self, title=None):
 
         return f'''
-<div class="toolbar">
-    <p class="title">{title}</p>
-</div>
+            <div class="toolbar">
+                <Text(title={title})>
+            </div>
         '''
