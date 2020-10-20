@@ -1,8 +1,11 @@
-# pyMarkupL (Python Markup language)
-Streamline the production of your HTML page using this python framework
+<img src="https://github.com/Sandro-Meireles/pyMarkupL/blob/master/imgs/pML%202Kx2K%20crop.png" width="600" align="right">
+
+# pyMarkupL
+(Python Markup language) Streamline the production of your HTML page using this python framework
 
 ## Installation
- - Download/Clone this repository `git clone https://github.com/Sandro-Meireles/pyMarkupL.git`
+ - Download/Clone this repository:  
+ `git clone https://github.com/Sandro-Meireles/pyMarkupL.git`
  
  This framework will be added future in PyPi
  
