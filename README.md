@@ -1,7 +1,16 @@
-<img src="https://github.com/Sandro-Meireles/pyMarkupL/blob/master/imgs/pML%20Banner.png" width="600" align="right">
+<img src="https://github.com/Sandro-Meireles/pyMarkupL/blob/master/imgs/pML%20Banner.png" width="550" align="right">
 
 # pyMarkupL
-(Python Markup language) Streamline the production of your HTML page using this python framework
+(Python Markup language) Streamline the production of your HTML page using this python framework.
+
+Creating an HTML page can be very repetitive,
+often having to copy and paste multiple lines
+code to modify minimal things, like a
+description.
+
+pyMarkupL greatly speeds up this process, giving
+possibility to create elements with parameters
+and / or fully customizable sub-elements.
 
 ## Installation
  - Download/Clone this repository:  
