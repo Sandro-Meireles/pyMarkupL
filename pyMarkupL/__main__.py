@@ -1,0 +1,1 @@
+print('Get help: https://github.com/Sandro-Meireles/pyMarkupL')

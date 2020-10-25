@@ -1,0 +1,12 @@
+
+pyMarkupL Commands:
+
+pml [Action]
+- init : Initializes your project in the directory where the command was made.
+
+manage.py [Action]
+- run : Runs a debug version of your page.
+- compile : Compiles your entire project and generates a file at: [you_project]/output/release/
+- help : Shows this help interface.
+
+for more help contact me directly: sandro.meirelesdev@gmail.com
