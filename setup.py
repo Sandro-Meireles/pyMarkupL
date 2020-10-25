@@ -23,7 +23,6 @@ setup(
 
     name='pyMarkupL',
 
-
     version='1.0.0b1',
     
     description='Streamline the production of your HTML page using this python framework.',
@@ -47,24 +46,13 @@ setup(
     # See https://pypi.python.org/pypi?%3Aaction=list_classifiers
     classifiers=[
         'Programming Language :: Python :: 3.6'
-        # How mature is this project? Common values are
-        #   3 - Alpha
-        #   4 - Beta
-        #   5 - Production/Stable
         'Development Status :: 4 - Beta',
-
-        # Indicate who your project is intended for
-
-        # Pick your license as you wish (should match "license" above)
         'License :: OSI Approved :: MIT License',
 
     ],
 
-    # What does your project relate to?
     keywords='pymarkupl html react css javascript',
 
-    # You can just specify the packages manually here if your project is
-    # simple. Or you can use find_packages().
     packages=find_packages(exclude=['contrib', 'docs', 'tests*', '.gitignore']),
 
     entry_points = {

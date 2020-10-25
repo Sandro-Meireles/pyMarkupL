@@ -7,6 +7,9 @@ pml [Action]
 manage.py [Action]
 - run : Runs a debug version of your page.
 - compile : Compiles your entire project and generates a file at: [you_project]/output/release/
+
+General commands (works for both "pml" and "manage.py"):
+- ok : Tells whether the pyMarkupL has been successfully installed!
 - help : Shows this help interface.
 
 for more help contact me directly: sandro.meirelesdev@gmail.com
