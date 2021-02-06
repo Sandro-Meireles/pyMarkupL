@@ -1,0 +1,1 @@
+from pyMarkupL.core.decorators import command_decoratos

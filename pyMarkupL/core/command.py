@@ -69,7 +69,8 @@ class Command:
         print('\npyMarkupL has been successfully installed!')
 
     def help_(self):
-        with open(os.path.join(get_core_path(), 'help/help.txt'), 'r') as help_file:
+        root = os.path.dirname(get_core_path())
+        with open(os.path.join(root, 'help.txt'), 'r') as help_file:
             print(help_file.read())
         
     @ManageRequire

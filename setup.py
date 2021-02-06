@@ -50,12 +50,25 @@ setup(
         'License :: OSI Approved :: MIT License',
 
     ],
+    
 
     keywords='pymarkupl html react css javascript',
 
     packages=find_packages(exclude=['contrib', 'docs', 'tests*', '.gitignore']),
 
+    include_package_data=True,
+
+    package_data={
+        "": [
+                "*.txt",
+                'startstructure/*',
+                'startstructure/src/*',
+                'startstructure/src/components/*',
+                'startstructure/src/components/static/*'
+             ],
+    },
+
     entry_points = {
-        'console_scripts': ['pml=management.pml:main'],
+        'console_scripts': ['pml=pyMarkupL.management.pml:main'],
     },
 )
