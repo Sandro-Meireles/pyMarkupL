@@ -56,6 +56,8 @@ setup(
 
     packages=find_packages(exclude=['contrib', 'docs', 'tests*', '.gitignore']),
 
+    setup_requires=['wheel'],
+
     include_package_data=True,
 
     package_data={
