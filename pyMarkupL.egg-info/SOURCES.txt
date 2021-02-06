@@ -13,3 +13,8 @@ pyMarkupL/core/compiler.py
 pyMarkupL/core/elements.py
 pyMarkupL/core/exceptions.py
 pyMarkupL/core/mamber_manager.py
+pyMarkupL/core/management.py
+pyMarkupL/core/decorators/__init__.py
+pyMarkupL/core/decorators/command_decoratos.py
+pyMarkupL/management/__init__.py
+pyMarkupL/management/pml.py
