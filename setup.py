@@ -23,7 +23,7 @@ setup(
 
     name='pyMarkupL',
 
-    version='1.0.0b1',
+    version='1.0.0b2',
     
     description='Streamline the production of your HTML page using this python framework.',
     long_description=long_description,
@@ -45,13 +45,12 @@ setup(
 
     # See https://pypi.python.org/pypi?%3Aaction=list_classifiers
     classifiers=[
-        'Programming Language :: Python :: 3.6'
+        'Programming Language :: Python :: 3.6',
         'Development Status :: 4 - Beta',
-        'License :: OSI Approved :: MIT License',
+        'License :: OSI Approved :: MIT License'
 
     ],
     
-
     keywords='pymarkupl html react css javascript',
 
     packages=find_packages(exclude=['contrib', 'docs', 'tests*', '.gitignore']),
@@ -59,16 +58,6 @@ setup(
     setup_requires=['wheel'],
 
     include_package_data=True,
-
-    package_data={
-        "": [
-                "*.txt",
-                'startstructure/*',
-                'startstructure/src/*',
-                'startstructure/src/components/*',
-                'startstructure/src/components/static/*'
-             ],
-    },
 
     entry_points = {
         'console_scripts': ['pml=pyMarkupL.management.pml:main'],
