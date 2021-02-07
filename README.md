@@ -14,7 +14,7 @@ and / or fully customizable sub-elements.
 
 ## Installation
  - To install pyMarkupL, simply run this command in your terminal of choice:  
- `> pip install git+https://github.com/Sandro-Meireles/pyMarkupL.git@pypi_develop`
+ `> pip install git+https://github.com/Sandro-Meireles/pyMarkupL.git`
 
 Right after installation, the command `pml` will be available, to check if everything was installed correctly open a terminal and do the following command:
 -  `> pml ok`
