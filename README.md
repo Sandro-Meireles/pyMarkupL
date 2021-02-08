@@ -85,7 +85,7 @@ the way the entire project is structured is at the discretion of the developer.
 - `src/main.py` Contains the main element, the one that was called in `settings.py`
 
 ```py
-from core.elements import Element
+from pyMarkupL.core.elements import Element
 from src.components.static.style import MyStyle
 from src.components.toolbar import Toolbar
 from src.components.box import Box
@@ -105,9 +105,9 @@ class Main(Element):
 ```
 See how simple it is to create an element.
 ```py
-from core.elements import Element
+from pyMarkupL.core.elements import Element
 ```
-- We import of `Element` which is in `core.elements`  
+- We import of `Element` which is in `pyMarkupL.core.elements`  
 This is an abstract class, to create an element just inherit it and add/modify some parameters and methods.
 
 ```py
